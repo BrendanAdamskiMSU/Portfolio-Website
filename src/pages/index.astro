@@ -9,7 +9,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 <Layout title="Brendan Adamski">
 	<main>
 		<h1 id="home"><span class="text-gradient">Brendan Adamski</span></h1>
-		<h2><span class="text-gradient">Computer Science Student in the Detroit/A2 Area</span></h2>
+		<h2><span class="text-gradient">Computer Science Student in the Detroit Area</span></h2>
 		
 		<div class="aboutme">
 			<hr id="about">
@@ -80,7 +80,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		margin-top: 15rem;
+		margin-top: 10vw;
 		max-width: 120ch;
 	}
 
@@ -96,7 +96,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		padding-top: 6rem;
 		
 		display:inline;
-		
+		align-items: center;
 		
 
 	}
@@ -108,7 +108,8 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	}
 	h1.aboutme{
 		
-		font-size: 4vw;
+		font-size: 3rem;
+		
 		display:inline-block;
 		vertical-align:top;
 		padding: 5vw;
@@ -123,7 +124,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	}
 	p.aboutme{
 		transition: 1s;
-		width: 30rem;
+		width: 60%;
 		word-wrap: break-word;
 		font-size: 1.1rem;
 		display:inline-block;
@@ -134,7 +135,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	h1 {
 		text-align: center;
 		transition: 1s;
-		font-size: 5vw;
+		font-size: 11vw;
 		font-weight: 800;
 		margin: 0;
 		color: rgb(195, 214, 194);
