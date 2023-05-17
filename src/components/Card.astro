@@ -24,13 +24,17 @@ const { href, title, body } = Astro.props;
 		list-style: none;
 		display: flex;
 		padding: 0.25rem;
-		background-color: rgb(119, 185, 121);
+		background-color: rgb(255,255,255);
+		border: .3rem double rgb(195, 195, 195);
+		border-width: .3rem;
 		background-image: none;
 		background-size: 400%;
 		border-radius: 0.6rem;
 		background-position: 100%;
 		transition: background-position 0.8s cubic-bezier(0.7, 1, 0.6, 1);
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+		
+
 	}
 
 	.link-card > a {
@@ -40,7 +44,9 @@ const { href, title, body } = Astro.props;
 		padding: 1rem 1.3rem;
 		border-radius: 0.35rem;
 		color: #235435;
-		background-color: rgb(205, 255, 216);
+		transition: 1s;
+		transition: border 500ms ease-out;
+		background-color: rgb(255, 255, 255);
 		opacity: 0.8;
 	}
 	h2 {
@@ -56,8 +62,12 @@ const { href, title, body } = Astro.props;
 	.link-card:is(:hover, :focus-within) {
 		background-position: 0;
 		outline: ;
-		background-color: #235435;
-		background-image: var(--accent-gradient);
+		
+		border-color: #235435;
+		transition: border 500ms cubic-bezier(0.22, 1, 0.36, 1);
+		/**background-image: var(--accent-gradient); 
+		background-color: #235435;*/
+		transition: 1s;
 	}
 	.link-card:is(:hover, :focus-within) h2 {
 		color: rgb(23, 65, 25);
