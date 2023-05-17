@@ -25,7 +25,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		</p>
 		
 		</div>
-			<a class="nextbutton" href="#exp">next</a>
+			
 
 
 		<div class="Experience" id="exp">
@@ -61,10 +61,11 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 			</ul>
 			<hr>
 			<h1>Projects</h1>
-			<ul role="list" class="link-card-grid">
+			<ul role="list" class="link-project-grid">
 			{posts.slice(0).map((post) => (
-				<Markdowns
+				<Markdowns 
 				title={post.frontmatter.title}
+				image={post.frontmatter.image}
 				description={post.frontmatter.description}
 				/>	
 			  ))}
@@ -76,6 +77,10 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 
 	html{
 		scroll-behavior: smooth;
+		background-image: "back.jpg";
+	}
+	body{
+		background-image: "back.jpg";
 	}
 	main {
 		margin: auto;
@@ -109,10 +114,12 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	h1.aboutme{
 		
 		font-size: 3rem;
-		
+		padding-top: 4vw;
+		padding-left: 3vw;
+		text-align: center;
 		display:inline-block;
 		vertical-align:top;
-		padding: 5vw;
+		
 		text-align: center;
 	}
 
@@ -124,6 +131,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	}
 	p.aboutme{
 		transition: 1s;
+		padding-left: 5vw;
 		width: 60%;
 		word-wrap: break-word;
 		font-size: 1.1rem;
@@ -175,6 +183,21 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		gap: 1rem;
 		padding: 0;
 	}
+	.link-project-grid {
+		display:grid;
+		grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+		
+		gap: 1rem;
+		padding: 0;
+	}
+	.link-project-grid:hover {
+
+	}
+	.Markdowns:hover{
+		background-color: red;
+	}
+
+
 	.article{
 		margin: auto;
 		padding: 1.5rem;

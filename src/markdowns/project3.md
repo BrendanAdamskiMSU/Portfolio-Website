@@ -1,7 +1,6 @@
 ---
-title: beans4
-description: Im cool
-url: me
+title: Passion Project Website
+description: Created a creative Peanuts themed personal website from scratch. 
+image: snoopy.avif
 ---
 
-gjmuryt4whfngxdrsefwerbegnhrtgewfgr
