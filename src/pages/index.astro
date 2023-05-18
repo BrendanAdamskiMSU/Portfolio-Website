@@ -17,7 +17,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		<h2><span class="text-gradient">Computer Science Student in the Detroit Area</span></h2>
 
 		<ul role="list" class="griddy">
-			<a class="hmm" href="Resume1.pdf" target="_blank">Resume</a>
+			<a class="hmm" href="Resume1.pdf" target="_blank">Resume‎  ‎ ‎‎‎‎‎‎  ‎ </a>
 			<a href="#about">Me</a>
 			
 			<a href="#exp">Skills</a>
@@ -244,19 +244,22 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		padding: 0;
 	}
 	.griddy{
-		display:grid;
+		display:flex;
 		text-align:center;
-		
+		justify-content:center;
 		gap:1.5rem;
 		grid-template-columns: repeat(auto-fit, minmax(0, .2fr));
 		padding-top:3rem;
+		padding-left:3rem;
 		gap: 12%;
 		
 		
 		
 
 	}
-
+	.hmm {
+		color:red;
+	}
 	.griddy a{
 		color:grey;
 		font-size:1.2rem;
@@ -267,7 +270,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		display:grid;
 		grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
 		
-		gap: 1rem;
+		gap: min(3rem);
 		padding: 0;
 	}
 	.link-project-grid:hover {
