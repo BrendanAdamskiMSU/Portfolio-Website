@@ -17,7 +17,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		<h2><span class="text-gradient">Computer Science Student in the Detroit Area</span></h2>
 
 		<ul role="list" class="griddy">
-			<a href="Resume1.pdf" target="_blank">Resume</a>
+			<a class="hmm" href="Resume1.pdf" target="_blank">Resume</a>
 			<a href="#about">Me</a>
 			
 			<a href="#exp">Skills</a>
@@ -99,6 +99,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	resume{
 		position:relative;
 	}
+
 	resume button{
 		color:rgb(0, 0, 0,.45);
 		position:absolute;
@@ -245,10 +246,14 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	.griddy{
 		display:grid;
 		text-align:center;
-		justify-content:center;
+		
 		gap:1.5rem;
 		grid-template-columns: repeat(auto-fit, minmax(0, .2fr));
 		padding-top:3rem;
+		gap: 12%;
+		
+		
+		
 
 	}
 
