@@ -86,7 +86,8 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		</ul>
 		<hr>
 		<resume id="resume">
-
+			<h1 class="resumetxt">Resume</h1>
+			<a href="Resume1.pdf" target="_blank"><button >Click here</button></a>
 
 		</resume>
 	</main>
@@ -94,6 +95,31 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 
 <Footer>
 <style>
+	resume{
+		position:relative;
+	}
+	resume button{
+		color:rgb(0, 0, 0,.45);
+		position:absolute;
+		background-color: rgb(255, 255, 255,0);
+		padding:1px;
+		transition:1s;
+		padding-top:-5px;
+		border-radius:20px;
+		
+		border-width:5px;
+		border-color:rgb(0, 0, 0,0);
+		font-size:4vw;
+		font-weight:900;
+		right:30%;
+		bottom:5%
+		
+	}
+	resume button:hover{
+		background-color: rgb(222, 222, 222,0.4);
+		color:rgb(0, 0, 0,.3);
+		transition:1s;
+	}
 	.header{
 		opacity:1;
 		transition:1s;
@@ -137,6 +163,11 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		color: rgb(28, 85, 24);
 		text-decoration: dashed;
 		font-size: 1.15rem;
+	}
+
+	h1.resumetxt{
+		
+		margin-top:-5rem;
 	}
 	h1.aboutme{
 		
