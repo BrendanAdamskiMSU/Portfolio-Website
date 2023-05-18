@@ -3,13 +3,27 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Markdowns from '../components/Markdowns.astro';
+import Footer from '../components/Footer.astro';
+import Headers from '../components/Headers.astro';
 const posts = await Astro.glob('../markdowns/*.md'); // returns an array of posts that live at ./src/pages/post/*.md
 ---
 
 <Layout title="Brendan Adamski">
+	<div class="header">
+	
+	</div>
 	<main>
 		<h1 id="home"><span class="text-gradient">Brendan Adamski</span></h1>
 		<h2><span class="text-gradient">Computer Science Student in the Detroit Area</span></h2>
+
+		<ul role="list" class="griddy">
+			<a href="#resume">Resume</a>
+			<a href="#about">Me</a>
+			
+			<a href="#exp">Skills</a>
+			<a href="#proj">Projects</a>
+			
+		</ul>
 		
 		<div class="aboutme">
 			<hr id="about">
@@ -60,8 +74,8 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 			/>
 			</ul>
 			<hr>
-			<h1>Projects</h1>
-			<ul role="list" class="link-project-grid">
+			<h1 id="proj">Projects</h1>
+			<ul  role="list" class="link-project-grid">
 			{posts.slice(0).map((post) => (
 				<Markdowns 
 				title={post.frontmatter.title}
@@ -70,11 +84,24 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 				/>	
 			  ))}
 		</ul>
+		<hr>
+		<resume id="resume">
+
+
+		</resume>
 	</main>
 </Layout>
 
+<Footer>
 <style>
-
+	.header{
+		opacity:1;
+		transition:1s;
+	}
+	.header:hover{
+		opacity:0;
+		transition:1s;
+	}
 	html{
 		scroll-behavior: smooth;
 		background-image: "back.jpg";
@@ -85,7 +112,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 	main {
 		margin: auto;
 		padding: 1.5rem;
-		margin-top: 10vw;
+		margin-top: 3vw;
 		max-width: 120ch;
 	}
 
@@ -182,6 +209,22 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
+	}
+	.griddy{
+		display:grid;
+		text-align:center;
+		justify-content:center;
+		gap:1.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(0, .2fr));
+		padding-top:3rem;
+
+	}
+
+	.griddy a{
+		color:grey;
+		font-size:1.2rem;
+		text-decoration:none;
+		font-weight:500;
 	}
 	.link-project-grid {
 		display:grid;
