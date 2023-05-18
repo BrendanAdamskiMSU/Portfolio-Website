@@ -17,7 +17,7 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 		<h2><span class="text-gradient">Computer Science Student in the Detroit Area</span></h2>
 
 		<ul role="list" class="griddy">
-			<a href="#resume">Resume</a>
+			<a href="Resume1.pdf" target="_blank">Resume</a>
 			<a href="#about">Me</a>
 			
 			<a href="#exp">Skills</a>
@@ -85,16 +85,17 @@ const posts = await Astro.glob('../markdowns/*.md'); // returns an array of post
 			  ))}
 		</ul>
 		<hr>
-		<resume id="resume">
-			<h1 class="resumetxt">Resume</h1>
-			<a href="Resume1.pdf" target="_blank"><button >Click here</button></a>
 
-		</resume>
 	</main>
 </Layout>
 
 <Footer>
 <style>
+	/**		<resume id="resume">
+			<h1 class="resumetxt">Resume</h1>
+			<a href="Resume1.pdf" target="_blank"><button >Click here</button></a>
+
+		</resume>  */
 	resume{
 		position:relative;
 	}
