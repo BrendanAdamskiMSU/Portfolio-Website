@@ -1,0 +1,57 @@
+---
+const {title, description, image} = Astro.props;
+const id = title
+import Footer from '../components/Footer.astro';
+
+---
+
+<html lang="en">
+
+<ul class="link-card" id = {id}>
+	<a>
+		<h2>
+			- {title} -
+		</h2>
+		<img src={image}>
+		
+		<p>
+			{description}
+		</p>
+        
+	</a>
+    <slot />
+    <a href="/#proj"><button>Home</button></a>
+    <main></main>
+    <hr>
+
+    <Footer></Footer>
+</ul>
+
+
+</html>
+
+<style>
+    h2 {
+        font-size: 4rem;
+    }
+    ul{
+        
+        text-align: center;
+        padding-bottom: 40%;
+    }
+    img {
+		width:40%;
+		border-radius: 10px;
+		color: black;
+        
+	}
+    hr {
+	color: #235435;
+	border: .2rem solid #235435;
+	width: 80vw;
+	margin-bottom: 5rem;
+	margin-top: 5rem;
+}
+
+
+</style>

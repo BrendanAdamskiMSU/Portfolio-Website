@@ -1,11 +1,13 @@
 ---
 const {title, description, image} = Astro.props;
+
+const href = "/projects#" + title
 ---
 
 <html lang="en">
 
 <li class="link-card">
-	<a>
+	<a href={href}>
 		<h2>
 			- {title} -
 		</h2>
@@ -21,7 +23,7 @@ const {title, description, image} = Astro.props;
 </html>
 
 <style>
-    li {
+    a {
         transition: 1s;
 		
     }
@@ -72,11 +74,7 @@ const {title, description, image} = Astro.props;
 		box-shadow: 3px 3px rgba(67, 100, 70, 0.233);
 		
 	}
-	.link-card:is(:hover, :focus-within) a {
 
-
-
-	}
     img {
 		width:100%;
 		margin-left: 0%;

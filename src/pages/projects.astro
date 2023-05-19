@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Markdowns from '../components/Markdowns.astro';
+import Footer from '../components/Footer.astro';
+import Headers from '../components/Headers.astro';
+import ProjDisplay from '../components/ProjDisplay.astro';
+const posts = await Astro.glob('../markdowns/*.md'); // returns an array of posts that live at ./src/pages/post/*.md
+---
+
+<Layout title="Projects">
+	<div class="header">
+	
+	</div>
+	<main>
+        <ul  role="list" class="link-project-grid">
+			{posts.slice(0).map((post) => (
+				<ProjDisplay
+				title={post.frontmatter.title}
+				image={post.frontmatter.image}
+				description={post.frontmatter.description}
+                data = {post.frontmatter.data}
+				/><hr>
+			  ))}
+		</ul>
+
+
+
+
+
+
+
+	</main>
+</Layout>
+
+
+<style>	
+hr {
+	color: #235435;
+	border: .2rem solid #235435;
+	width: 80vw;
+	margin-bottom: 5rem;
+	margin-top: 5rem;
+}
+
+
+</style>
